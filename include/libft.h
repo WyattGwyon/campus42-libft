@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 13:57:30 by clouden           #+#    #+#             */
-/*   Updated: 2025/04/10 19:14:02 by clouden          ###   ########.fr       */
+/*   Created: 2025/04/10 13:57:14 by clouden           #+#    #+#             */
+/*   Updated: 2025/04/10 14:11:38 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
-{
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	return (0);
-}
+#ifndef LIBFT_H
+#define LIBFT_H
 
-/*
-#include <stdio.h>
-#include <ctype.h>
+int ft_isalpha(int c);
 
-int main(int argc, char *arg[])
-{
-	int	c;
-
-	c = '{';	
-	printf("ft_isalpha: %d\nisalpha: %d\nthe character is: %c\n",\
-		 ft_isalpha(c),ft_isalpha(c), (char)c);	
-	return (0);
-}
-*/
+#endif

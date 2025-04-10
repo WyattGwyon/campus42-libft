@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 13:57:30 by clouden           #+#    #+#             */
-/*   Updated: 2025/04/10 19:14:02 by clouden          ###   ########.fr       */
+/*   Created: 2025/04/10 20:08:20 by clouden           #+#    #+#             */
+/*   Updated: 2025/04/10 20:27:29 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
+int ft_isalnum(int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	if ((c >= '0' && c <= '9') || \
+		(c >= 'A' && c <= 'Z') || \
+		(c >= 'a' && c <= 'z'))
 		return (1);
-	return (0);
+	return(0);
 }
 
 /*
 #include <stdio.h>
 #include <ctype.h>
 
-int main(int argc, char *arg[])
+int main(void)
 {
-	int	c;
+	int c;
 
-	c = '{';	
-	printf("ft_isalpha: %d\nisalpha: %d\nthe character is: %c\n",\
-		 ft_isalpha(c),ft_isalpha(c), (char)c);	
+	c = '@';
+	printf("ft_isalnum: %d\n", ft_isalnum(c));
+	printf("isalnum: %d\n", isalnum(c));
+	printf("The character is: %c", (char)c);
 	return (0);
 }
 */

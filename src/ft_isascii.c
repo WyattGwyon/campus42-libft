@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 13:57:30 by clouden           #+#    #+#             */
-/*   Updated: 2025/04/10 19:14:02 by clouden          ###   ########.fr       */
+/*   Created: 2025/04/10 20:39:45 by clouden           #+#    #+#             */
+/*   Updated: 2025/04/10 20:43:17 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
+int	ft_isascii(int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	return (0);
+	return (c >= 0 && c <= 127);
 }
 
 /*
 #include <stdio.h>
 #include <ctype.h>
 
-int main(int argc, char *arg[])
+int main(void)
 {
-	int	c;
-
-	c = '{';	
-	printf("ft_isalpha: %d\nisalpha: %d\nthe character is: %c\n",\
-		 ft_isalpha(c),ft_isalpha(c), (char)c);	
+	int c;
+	
+	c = 127;
+	printf("ft_isascii: %d\n", ft_isascii(c));
+	printf("isascii: %d\n", isascii(c));
+	printf("The character is: %c", (char)c);
 	return (0);
 }
 */
