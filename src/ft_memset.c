@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 18:30:14 by clouden           #+#    #+#             */
-/*   Updated: 2025/04/12 15:03:58 by clouden          ###   ########.fr       */
+/*   Updated: 2025/04/14 12:03:33 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,14 @@
 void	*ft_memset(void *s, int c, size_t n)
 {
 	int	i;
-	unsigned char *p;
 
 	i = 0;
-	p = (unsigned char *)s;	
-	while (n != 0)
+	while (n > i)
 	{
-		p[i] = (unsigned char)c;
+		((unsigned char *)s)[i] = (unsigned char)c;
 		i++;
-		n--;
 	}
-	return ((void *)p);
+	return ((void *)s);
 }
 
 /*
@@ -37,7 +34,7 @@ int main(void)
 	int ft_array[] = {2147483647, 260, 2};
 	int array[] = {2147483647, 260, 2};
 	int c = 0;
-	int n = 6;
+	int n = 2;
 	
 	printf("ft_memset\n");
 	printf("antes array[0]: %d\n", ft_array[0]);
@@ -57,7 +54,3 @@ int main(void)
 	return (0);
 }
 */
-
-
-// char -> 1 byte
-// int  -> 4 byte
