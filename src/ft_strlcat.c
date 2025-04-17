@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 17:01:11 by clouden           #+#    #+#             */
-/*   Updated: 2025/04/17 20:57:33 by clouden          ###   ########.fr       */
+/*   Updated: 2025/04/18 00:49:28 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,15 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int i;
-	int d_len;
-	int add_len;
-	
-	i = 0;
-	d_len = ft_strlen(dst);
+	size_t i;
+	size_t d_len;
+	size_t add_len;
+    
+    i = 0;
+    d_len = 0;
+    while (dst[d_len] && d_len < size)
+        d_len++;
+
 	add_len = size - d_len - 1;
 	if (add_len > 0)
 	{
@@ -33,12 +36,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	return (d_len + ft_strlen(src));
 }
-
+/*
 #include <stdio.h>
 
 int main(void)
 {
-	char dst[10] = {'H','e','l','l','o'};
+	char dst[10] = {'H','e','l','l','o','x','x','x','x','x'};
 	char *src = "World";
 	size_t size = 9;
 
@@ -48,3 +51,4 @@ int main(void)
 	printf("results: %zu\n", results);
 	return (0);
 }
+*/
