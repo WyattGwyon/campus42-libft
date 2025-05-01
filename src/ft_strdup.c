@@ -1,47 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 11:28:05 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/01 21:11:25 by clouden          ###   ########.fr       */
+/*   Created: 2025/05/01 20:01:38 by clouden           #+#    #+#             */
+/*   Updated: 2025/05/01 21:10:49 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
+#include <libft.h>
 
-void *ft_calloc(size_t count, size_t size)
+char *ft_strdup(const char *s1)
 {
-    void *mem;
-    int i;
-
+    char *copy;
+    size_t  n;
+    size_t  i;
+    
     i = 0;
-    mem = malloc(count * size);
-    if (!mem)
-        return ((void *) 0);
-    while (i < (count * size))
+    n = ft_strlen(s1);
+    copy = malloc(n + 1);
+    if (copy == NULL)
+        return (NULL);
+    while (i < n)
     {
-        ((unsigned char *)mem)[i] = 0;
+        copy[i] = s1[i];
         i++;
     }
-    return (mem);
+    copy[n] = '\0';
+    return (copy);
 }
 /*
-#include <stdio.h>
 #include <string.h>
+#include <stdio.h>
 
 int main(void)
 {
-    size_t count = 3;
-    size_t size = 4;
-    void *ft_mem = ft_calloc(count, size);
-    void *mem = calloc(count, size);
+    char *s1 = "hewwoaw weowd";
 
-    printf("ft_calloc: %p, %zu\n", ft_mem, strlen(ft_mem));
-    printf("calloc: %p, %zu\n", mem, strlen(mem));
+    printf("ft_strdup: %s\n", ft_strdup(s1));
+    printf("strdup: %s\n", strdup(s1));
     return (0);
 }
 */
