@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 11:28:05 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/01 21:11:25 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/06 16:42:58 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void *ft_calloc(size_t count, size_t size)
     i = 0;
     mem = malloc(count * size);
     if (!mem)
-        return ((void *) 0);
+        return (NULL);
     while (i < (count * size))
     {
         ((unsigned char *)mem)[i] = 0;
@@ -40,8 +40,8 @@ int main(void)
     void *ft_mem = ft_calloc(count, size);
     void *mem = calloc(count, size);
 
-    printf("ft_calloc: %p, %zu\n", ft_mem, strlen(ft_mem));
-    printf("calloc: %p, %zu\n", mem, strlen(mem));
+    printf("ft_calloc: %p, %zu\n", ft_mem, sizeof(ft_mem));
+    printf("calloc: %p, %zu\n", mem, sizeof(mem));
     return (0);
 }
 */
