@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 19:23:22 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/07 12:44:29 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/07 19:41:32 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,46 @@ static int ft_cntsplits(char const *s, char dlm, size_t len)
 char **ft_split(char const *s, char c)
 {
     char **array;
-    //char *new;
-    int i;
+    char *buff;
+    char *dest;
+    int ai:
+    int bi;
 	int len;
 	int strcnt;
+    int b_len;
 
     i = 0;
 	len = ft_strlen(s);
     strcnt = ft_cntsplits(s, c, len);
-	array = ft_calloc(strcnt, sizeof(char *));
-    while (s[i])
+	array = (char **)ft_calloc(strcnt + 1, sizeof(char *));
+    buff = (char *)ft_calloc(1, len);
+    if (array == NULL)
+        return (NULL);
+    while (s[0])
     {
-        i++;
+        if (s[0] == c && *buff == 0)
+            s++;
+        else if (s[0] == c && *buff != 0)
+        {
+            buff[bi] = '\0';
+            b_len = ft_strlen(buff);
+            dest = (char *)ft_calloc(1, b_len);
+            ft_strlcpy(dest, buff, b_len);
+            array[ai] = &dest;
+            free(dest);
+            memset(buff, 0, len);
+            s++;
+            bi = 0;
+            ai++;
+        }
+        else
+        {
+            buff[bi] = s[0];
+            bi++;
+            s++;
+        }
     }
+    array[ai] = NULL;
     return(array);
 }
 

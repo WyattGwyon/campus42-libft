@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 11:28:05 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/06 16:42:58 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/07 17:50:32 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void *ft_calloc(size_t count, size_t size)
     int i;
 
     i = 0;
+    if (count == 0 || size == 0)
+        return (NULL);
     mem = malloc(count * size);
     if (!mem)
         return (NULL);
