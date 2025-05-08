@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 19:23:22 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/08 19:21:31 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/08 19:26:59 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,27 @@ static int ft_cntsplits(char const *s, char dlm, size_t len)
 	return (cnt + 1);
 }
 
+static char **ft_setarray(int strcnt, char const *s)
+{
+	int ai;
+
+	ai = 0;
+	if (strcnt == 1)
+	{
+		array[ai] = NULL;
+		return (array);
+	}
+	else if (strcnt == 2)
+	{
+		array[ai] = (char *)s;
+		ai++;
+		array[ai] = NULL;
+		return (array);
+	}	
+	array = (char **)ft_calloc(strcnt + 1, sizeof(char *));
+	return (array);
+}
+
 char **ft_strsplit(char const *s, char c)
 {
     char **array;
@@ -54,22 +75,10 @@ char **ft_strsplit(char const *s, char c)
 	bi = 0; 
 	len = ft_strlen(s);
     strcnt = ft_cntsplits(s, c, len);
-	if (strcnt == 1)
-	{
-		array[ai] = NULL;
-		return (array);
-	}
-	else if (strcnt == 2)
-	{
-		array[ai] = (char *)s;
-		ai++;
-		array[ai] = NULL;
-		return (array);
-	}	
-	array = (char **)ft_calloc(strcnt + 1, sizeof(char *));
-    buff = (char *)ft_calloc(1, len);
+	array = ft_setarray(strcnt, s);
     if (array == NULL)
         return (NULL);
+    buff = (char *)ft_calloc(1, len);
     while (s[0])
     {
         if (s[0] == c && *buff == 0)
@@ -122,7 +131,7 @@ int main(void)
 	array = ft_strsplit(s1, c);
 	for (int i = 0; array[i] != NULL; i++) 
 	
-    	printf("'%s' , ", array[i]);
+    	printf("'%s' , ", array[i])r
 		
 	printf("\n----\n");
 	
