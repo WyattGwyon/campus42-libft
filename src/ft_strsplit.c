@@ -6,14 +6,14 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 19:23:22 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/08 19:26:59 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/12 23:59:19 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <libft.h>
 
-static int ft_cntsplits(char const *s, char dlm, size_t len)
+static int ft_cntsplits(char const *s, char dlm)
 {
 	int i;
 	int cnt;
@@ -24,7 +24,7 @@ static int ft_cntsplits(char const *s, char dlm, size_t len)
 	{
 		if (s[i] == dlm)
 		{
-			if (i == 0 || s[i - 1] == dlm || i + 2 == len)
+			if (i == 0 || s[i - 1] == dlm)
 				i++;
 			else
 			{
@@ -32,7 +32,7 @@ static int ft_cntsplits(char const *s, char dlm, size_t len)
 				i++;
 			}
 		}
-		else if (i + 2 == len && cnt == 0)
+		else if (s[i + 1] == '\0' && cnt == 0)
 			return (cnt = 2);
 		else
 			i++;
@@ -40,44 +40,40 @@ static int ft_cntsplits(char const *s, char dlm, size_t len)
 	return (cnt + 1);
 }
 
-static char **ft_setarray(int strcnt, char const *s)
+static char **ft_setarray(int strcnt, char const *s, char dlm)
 {
-	int ai;
-
-	ai = 0;
+    char **array;
+    char set[2];
+    
+    set[0] = dlm;
+    set[1] = '\0';
 	if (strcnt == 1)
 	{
-		array[ai] = NULL;
+        array = (char **)ft_calloc(1, sizeof(char *));
+		array[0] = NULL;
 		return (array);
 	}
 	else if (strcnt == 2)
 	{
-		array[ai] = (char *)s;
-		ai++;
-		array[ai] = NULL;
+        array = (char **)ft_calloc(2 , sizeof(char *));
+		array[0] = ft_strtrim(s, set);
+		array[1] = NULL;
 		return (array);
 	}	
 	array = (char **)ft_calloc(strcnt + 1, sizeof(char *));
 	return (array);
 }
 
-char **ft_strsplit(char const *s, char c)
+static char **ft_procbuff(char const *s, char c, char **array)
 {
-    char **array;
     char *buff;
+    int len;
     int ai;
     int bi;
-	int len;
-	int strcnt;
-    int b_len;
-
+  
     ai = 0;
-	bi = 0; 
-	len = ft_strlen(s);
-    strcnt = ft_cntsplits(s, c, len);
-	array = ft_setarray(strcnt, s);
-    if (array == NULL)
-        return (NULL);
+    bi = 0;
+    len = ft_strlen(s);
     buff = (char *)ft_calloc(1, len);
     while (s[0])
     {
@@ -86,8 +82,7 @@ char **ft_strsplit(char const *s, char c)
         else if (s[0] == c && *buff != 0)
         {
             buff[bi] = '\0';
-            b_len = ft_strlen(buff) + 1;
-			array[ai] = ft_strdup(buff);
+            array[ai] = ft_strdup(buff);
             ft_memset(buff, 0, len);
             s++;
             bi = 0;
@@ -100,10 +95,26 @@ char **ft_strsplit(char const *s, char c)
             s++;
         }
     }
-    array[ai] = NULL;
-    return(array);
+    free(buff);
+    array[ai] = NULL;   
+    return (array);
 }
 
+char **ft_strsplit(char const *s, char c)
+{
+    char **array;
+	int strcnt;
+
+    strcnt = ft_cntsplits(s, c);
+	array = ft_setarray(strcnt, s, c);
+    if (array == NULL)
+        return (NULL);
+    else if (strcnt == 1 || strcnt == 2)
+        return (array);
+    array = ft_procbuff(s, c, array);
+    return(array);
+}
+/*
 #include <stdio.h>
 
 int main(void)
@@ -111,36 +122,109 @@ int main(void)
     const char *s = ",,,Hello,,World, Goodbye,,";
 	const char *s1 = ",,,,,,";
 	const char *s2 = "Hello World";
+	const char *s3 = ",w,,";
+	const char *s4 = ",4,";
   	char c = ',';  
-	size_t len = ft_strlen(s);
-	size_t len1 = ft_strlen(s1);
 	char **array;
+    char set[2];
+    set[0] = c;
+    set[1] = '\0';
 	
-	printf("original: %s, num of strings: %d\n", s, ft_cntsplits(s, c, len));
-	printf("original: %s, num of strings: %d\n", s1, ft_cntsplits(s1, c, len));
+	printf("string:         %s\nnum of strings: %d\n", s, ft_cntsplits(s, c));
+	printf("string:         %s\nnum of strings: %d\n", s1, ft_cntsplits(s1, c));
+	printf("string:         %s\nnum of strings: %d\n", s2, ft_cntsplits(s2, c));
+	printf("string:         %s\nnum of strings: %d\ntrimmed: %s\n", 
+            s3, ft_cntsplits(s3, c), ft_strtrim(s3, set));
+	printf("string:         %s\nnum of strings: %d\ntrimmed: %s\n\n", 
+            s4, ft_cntsplits(s4, c), ft_strtrim(s4, set));
+
 
     printf("original: %s\narray of strs: ", s);
 	array = ft_strsplit(s, c);
-	for (int i = 0; array[i] != NULL; i++) 
-	
-    	printf("'%s' , ", array[i]);
-		
-	printf("\n----\n");
-	
+	for (int i = 0; ; i++) 	
+    {
+        if (array[i] == NULL)
+        {
+            printf("'NULL'");
+            break;
+        }
+        else
+    	    printf("'%s' | ", array[i]);
+    } 
+    printf("\n----\n\n");
+    for (int i = 0; array[i] != NULL; i++)
+        free(array[i]);
+    free(array);
+    
+    
     printf("original: %s\narray of strs: ", s1);
 	array = ft_strsplit(s1, c);
-	for (int i = 0; array[i] != NULL; i++) 
-	
-    	printf("'%s' , ", array[i])r
-		
-	printf("\n----\n");
-	
+	for (int i = 0; ; i++) 	
+    {
+        if (array[i] == NULL)
+        {
+            printf("'NULL'");
+            break;
+        }
+        else
+    	    printf("'%s' | ", array[i]);
+    } 
+    printf("\n----\n\n");
+    for (int i = 0; array[i] != NULL; i++)
+        free(array[i]);
+    free(array);   
+
     printf("original: %s\narray of strs: ", s2);
 	array = ft_strsplit(s2, c);
-	for (int i = 0; array[i] != NULL; i++) 
-	
-    	printf("'%s' , ", array[i]);
-		
-	printf("\n----\n");
-	return (0);
+	for (int i = 0; ; i++) 	
+    {
+        if (array[i] == NULL)
+        {
+            printf("'NULL'");
+            break;
+        }
+        else
+    	    printf("'%s' | ", array[i]);
+    } 
+    printf("\n----\n\n");
+    for (int i = 0; array[i] != NULL; i++)
+        free(array[i]);
+    free(array);
+
+    printf("original: %s\narray of strs: ", s3);
+	array = ft_strsplit(s3, c);
+	for (int i = 0; ; i++) 	
+    {
+        if (array[i] == NULL)
+        {
+            printf("'NULL'");
+            break;
+        }
+        else
+    	    printf("'%s' | ", array[i]);
+    } 
+    printf("\n----\n\n");
+    for (int i = 0; array[i] != NULL; i++)
+        free(array[i]);
+    free(array);
+
+    printf("original: %s\narray of strs: ", s4);
+	array = ft_strsplit(s4, c);
+	for (int i = 0; ; i++) 	
+    {
+        if (array[i] == NULL)
+        {
+            printf("'NULL'");
+            break;
+        }
+        else
+    	    printf("'%s' | ", array[i]);
+    } 
+    printf("\n----\n\n");
+    for (int i = 0; array[i] != NULL; i++)
+        free(array[i]);
+    free(array);
+
+    return (0);
 }
+*/
