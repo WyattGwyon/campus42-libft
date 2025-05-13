@@ -6,10 +6,11 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 00:04:53 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/13 18:33:37 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/13 18:41:59 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include <libft.h>
 
 static int ft_getsize(int *n)
@@ -68,7 +69,7 @@ static char *ft_buildstr(int n, char *str, int size)
     return (str);
 
 }
-
+/*
 char *ft_itoa(int n)
 {
     char *str;
@@ -77,13 +78,17 @@ char *ft_itoa(int n)
     if (n == 0)
     {
         str = ft_ifzero(str);
+        if (str == NULL)
+            return (NULL);
         return (str);
     }
     size = ft_getsize(&n);
     str = ft_buildstr(n, str, size);
+    if (str == NULL)
+        return (NULL);
     return (str);
 }
-/*
+
 #include <stdio.h>
 
 int main(void)
