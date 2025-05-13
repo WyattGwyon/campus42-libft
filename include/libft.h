@@ -6,9 +6,11 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 13:57:14 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/12 14:24:18 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/13 17:39:32 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 #ifndef LIBFT_H
 #define LIBFT_H
