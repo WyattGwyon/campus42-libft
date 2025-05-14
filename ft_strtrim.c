@@ -6,12 +6,12 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 11:26:16 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/06 16:51:28 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/14 23:53:30 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <libft.h>
+#include "libft.h"
 
 typedef struct s_trim
 {

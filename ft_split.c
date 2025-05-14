@@ -6,12 +6,12 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 19:23:22 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/14 18:42:02 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/14 23:46:34 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <libft.h>
+#include "libft.h"
 
 static int ft_cntsplits(char const *s, char dlm)
 {

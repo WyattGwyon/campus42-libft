@@ -6,12 +6,12 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 13:19:40 by clouden           #+#    #+#             */
-/*   Updated: 2025/04/14 11:41:10 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/14 23:39:34 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <libft.h>
+#include "libft.h"
 
 void ft_bzero(void *s, size_t n)
 {

@@ -6,12 +6,12 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:59:11 by clouden           #+#    #+#             */
-/*   Updated: 2025/04/17 14:32:31 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/14 23:50:45 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <libft.h>
+#include "libft.h"
 
 size_t ft_strlcpy(char *dst, const char *src, size_t size)
 {

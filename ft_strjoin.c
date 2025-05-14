@@ -6,12 +6,12 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 19:48:17 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/07 18:44:37 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/14 23:49:12 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <libft.h>
+#include "libft.h"
 
 char *ft_strjoin(char const *s1, char const *s2)
 {

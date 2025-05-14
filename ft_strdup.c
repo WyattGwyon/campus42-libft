@@ -6,13 +6,13 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 20:01:38 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/01 21:10:49 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/14 23:47:40 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
-#include <libft.h>
+#include "libft.h"
 
 char *ft_strdup(const char *s1)
 {

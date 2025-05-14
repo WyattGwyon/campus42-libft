@@ -6,12 +6,12 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 17:01:11 by clouden           #+#    #+#             */
-/*   Updated: 2025/04/18 00:49:28 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/14 23:50:07 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <libft.h>
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

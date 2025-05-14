@@ -6,12 +6,12 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 18:43:46 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/14 00:23:33 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/14 23:51:35 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <libft.h>
+#include "libft.h"
 
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
