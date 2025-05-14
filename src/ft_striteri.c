@@ -1,56 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/13 18:43:46 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/14 00:23:33 by clouden          ###   ########.fr       */
+/*   Created: 2025/05/14 00:07:13 by clouden           #+#    #+#             */
+/*   Updated: 2025/05/14 13:40:33 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include <libft.h>
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
     int i;
     int len;
-    char *new;
 
     i = 0;
     len = ft_strlen(s);
-    new = ft_calloc(1, len + 1);
     while (i < len)
     {
-        new[i] = f(i, s[i]);
+        f(i, &s[i]);
         i++;
     }
-    new[i] = '\0';
-    return (new);
 }
 /*
-static char mapper(unsigned int i, char c)
+static void mapper(unsigned int i, char *c)
 {
-    if (c == '\0')
-        return (c);
-    else if (i == 0 || i % 5 == 0)
-        c = 'M';
-    else if (i % 2 == 0)
-        c = 'p';
+    if (i == 0 || i % 5 == 0)
+        *c = 'I';
+    else if (i % 3 == 0)
+        *c = 'r';
     else if (i % 2 != 0)
-        c = 'i';
-    return (c);
+        *c = 't';
+    else  if (i % 2 == 0)
+        *c = 'e';
 }
 
 #include <stdio.h>
 
 int main(void)
 {
-    char *s = "Hello World";
+    char s[] = "Hello Strings";
 
-    printf("original: %s\nmapped: %s\n", s, ft_strmapi(s, mapper));
+    printf("Size of void *: %zu bytes\n", sizeof(void *));
+    printf("Size of int  *: %zu bytes\n", sizeof(int *));
+    printf("Size of char *: %zu bytes\n", sizeof(char *));
+
+    printf("original: %s\n", s);
+    ft_striteri(s, mapper);
+    printf("inplace: %s\n", s);
+
     return (0);
 }
 */
