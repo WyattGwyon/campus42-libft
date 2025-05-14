@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 19:23:22 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/12 23:59:19 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/14 18:42:02 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ static char **ft_procbuff(char const *s, char c, char **array)
     return (array);
 }
 
-char **ft_strsplit(char const *s, char c)
+char **ft_split(char const *s, char c)
 {
     char **array;
 	int strcnt;
@@ -140,7 +140,7 @@ int main(void)
 
 
     printf("original: %s\narray of strs: ", s);
-	array = ft_strsplit(s, c);
+	array = ft_split(s, c);
 	for (int i = 0; ; i++) 	
     {
         if (array[i] == NULL)
@@ -158,7 +158,7 @@ int main(void)
     
     
     printf("original: %s\narray of strs: ", s1);
-	array = ft_strsplit(s1, c);
+	array = ft_split(s1, c);
 	for (int i = 0; ; i++) 	
     {
         if (array[i] == NULL)
@@ -175,7 +175,7 @@ int main(void)
     free(array);   
 
     printf("original: %s\narray of strs: ", s2);
-	array = ft_strsplit(s2, c);
+	array = ft_split(s2, c);
 	for (int i = 0; ; i++) 	
     {
         if (array[i] == NULL)
@@ -192,7 +192,7 @@ int main(void)
     free(array);
 
     printf("original: %s\narray of strs: ", s3);
-	array = ft_strsplit(s3, c);
+	array = ft_split(s3, c);
 	for (int i = 0; ; i++) 	
     {
         if (array[i] == NULL)
@@ -209,7 +209,7 @@ int main(void)
     free(array);
 
     printf("original: %s\narray of strs: ", s4);
-	array = ft_strsplit(s4, c);
+	array = ft_split(s4, c);
 	for (int i = 0; ; i++) 	
     {
         if (array[i] == NULL)
