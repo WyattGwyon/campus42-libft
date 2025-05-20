@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 18:30:14 by clouden           #+#    #+#             */
-/*   Updated: 2025/04/15 14:00:13 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/20 13:35:58 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return ((void *)s);
 }
-
 /*
 #include <string.h>
 #include <stdio.h>

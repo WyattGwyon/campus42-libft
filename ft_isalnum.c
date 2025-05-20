@@ -6,17 +6,17 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 20:08:20 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/20 12:36:47 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/20 13:19:06 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
 	if ((c >= '0' && c <= '9') || \
 		(c >= 'A' && c <= 'Z') || \
 		(c >= 'a' && c <= 'z'))
 		return (1);
-	return(0);
+	return (0);
 }
 /*
 #include <stdio.h>

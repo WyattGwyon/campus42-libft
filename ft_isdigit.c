@@ -6,15 +6,14 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 19:15:15 by clouden           #+#    #+#             */
-/*   Updated: 2025/04/10 20:01:06 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/20 13:16:12 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }
-
 /*
 #include <stdio.h>
 #include <ctype.h>

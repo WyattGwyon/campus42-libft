@@ -6,14 +6,14 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 13:19:40 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/18 13:40:10 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/20 13:37:14 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, '\0', n);
 }

@@ -6,11 +6,11 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 13:57:30 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/20 12:41:12 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/20 13:12:04 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);

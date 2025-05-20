@@ -6,17 +6,16 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 17:07:46 by clouden           #+#    #+#             */
-/*   Updated: 2025/04/11 17:35:29 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/20 13:25:56 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int	c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);
-	return (0);	
+	return (0);
 }
-
 /*
 #include <stdio.h>
 #include <ctype.h>
