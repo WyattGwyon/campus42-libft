@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 17:44:31 by clouden           #+#    #+#             */
-/*   Updated: 2025/04/24 18:22:31 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/18 10:58:01 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    int i;
+    size_t i;
     int diff;
     
     i = 0;

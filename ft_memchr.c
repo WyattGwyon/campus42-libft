@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 12:49:17 by clouden           #+#    #+#             */
-/*   Updated: 2025/04/23 17:27:46 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/18 10:54:11 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void *ft_memchr(const void *s, int c, size_t n)
 {
-    int i;
+    size_t i;
 
     i = 0;
     while (i < n)

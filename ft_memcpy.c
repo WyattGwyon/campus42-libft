@@ -6,15 +6,15 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 12:04:28 by clouden           #+#    #+#             */
-/*   Updated: 2025/04/15 17:50:41 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/18 11:03:16 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
  
 #include <string.h>
 
-void	*memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while (i < n)

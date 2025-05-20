@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 13:57:30 by clouden           #+#    #+#             */
-/*   Updated: 2025/04/10 19:14:02 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/20 12:41:12 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@ int ft_isalpha(int c)
 		return (1);
 	return (0);
 }
-
 /*
 #include <stdio.h>
 #include <ctype.h>
 
-int main(int argc, char *arg[])
+int main(void)
 {
 	int	c;
 

@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 13:05:33 by clouden           #+#    #+#             */
-/*   Updated: 2025/04/17 11:47:21 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/18 11:05:00 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-    int     i;
+    size_t     i;
 
     i = 0;
     if (dest > src)

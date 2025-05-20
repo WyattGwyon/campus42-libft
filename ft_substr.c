@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 19:25:13 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/02 19:44:04 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/18 11:10:41 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 char    *ft_substr(char const *s, unsigned int start, size_t len)
 {
     char *sub;
-    char i;
+    size_t i;
 
     sub = malloc(len + 1);
     if (sub == NULL)

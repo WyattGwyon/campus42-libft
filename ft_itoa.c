@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 00:04:53 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/14 23:30:04 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/15 20:50:07 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ char *ft_itoa(int n)
     char *str;
     int size;
 
+    str = NULL;
     if (n == 0)
     {
         str = ft_ifzero(str);
