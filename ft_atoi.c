@@ -6,33 +6,33 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 18:51:01 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/18 13:24:57 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/20 17:58:42 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_atoi(const char *str)   
+int	ft_atoi(const char *str)
 {
-    int sign;
-    int num;
+	int	sign;
+	int	num;
 
-    sign = 1;
-    num = 0;
-    if (*str == '\0')
-        return (0);
-    while (*str == ' ')
-        str++;
-    if (*str == '-' || *str == '+')
-    {
-        if (*str == '-')
-            sign = -1;
-        str++;
-    }
-    while (*str >= '0' && *str <= '9')
-    {
-        num = num * 10 + (*str - '0');
-        str++;
-    }
-    return (num * sign);
+	sign = 1;
+	num = 0;
+	if (*str == '\0')
+		return (0);
+	while (*str == ' ')
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		num = num * 10 + (*str - '0');
+		str++;
+	}
+	return (num * sign);
 }
 /*
 #include <stdlib.h>

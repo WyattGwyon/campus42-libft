@@ -6,15 +6,15 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 15:13:55 by clouden           #+#    #+#             */
-/*   Updated: 2025/04/18 15:27:34 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/20 16:55:55 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c >= 'A' && c <= 'Z')
-        c += 32;
-    return (c);
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
+	return (c);
 }
 /*
 #include <stdio.h>

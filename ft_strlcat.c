@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 17:01:11 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/14 23:50:07 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/20 16:48:10 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,16 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t i;
-	size_t d_len;
-	size_t add_len;
-    
-    i = 0;
-    d_len = 0;
-    while (dst[d_len] && d_len < size)
-        d_len++;
+	size_t	i;
+	size_t	d_len;
+	size_t	add_len;
 
+	i = 0;
+	d_len = 0;
+	while (dst[d_len] && d_len < size)
+	{
+		d_len++;
+	}
 	add_len = size - d_len - 1;
 	if (add_len > 0)
 	{

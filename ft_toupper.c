@@ -6,15 +6,15 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 14:56:05 by clouden           #+#    #+#             */
-/*   Updated: 2025/04/18 15:13:36 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/20 16:52:50 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-    if (c >= 'a' && c <= 'z')
-        c -= 32;
-    return (c);
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
 }
 /*
 #include <stdio.h>

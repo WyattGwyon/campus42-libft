@@ -6,26 +6,26 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 17:44:31 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/18 10:58:01 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/20 17:34:22 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    size_t i;
-    int diff;
-    
-    i = 0;
-    while (i < n)
-    {
-        diff = ((unsigned char *)s1)[i] - ((unsigned char *)s2)[i];
-        if (diff != 0)
-            return (diff);
-        i++;
-    }
-    return (0);
+	size_t	i;
+	int		diff;
+
+	i = 0;
+	while (i < n)
+	{
+		diff = ((unsigned char *)s1)[i] - ((unsigned char *)s2)[i];
+		if (diff != 0)
+			return (diff);
+		i++;
+	}
+	return (0);
 }
 /*
 #include <string.h>
@@ -54,4 +54,5 @@ int main(void)
 
 
     return (0);  
-}*/
+}
+*/

@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 13:05:33 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/18 11:05:00 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/20 20:30:21 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,26 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-    size_t     i;
+	size_t			i;
 
-    i = 0;
-    if (dest > src)
-        while (i <= n)
-        {
-            ((unsigned char *)dest)[n - i] = ((unsigned char *)src)[n - i];
-            i++;
-        }
-    else
-        while (i < n)
-        {
-            ((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-            i++;
-        }
-    return ((void *)dest);
+	i = 0;
+	if (dest > src)
+	{
+		while (i <= n)
+		{
+			((unsigned char *)dest)[n - i] = ((unsigned char *)src)[n - i];
+			i++;
+		}
+	}
+	else
+	{
+		while (i < n)
+		{
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+			i++;
+		}
+	}
+	return ((void *)dest);
 }
 /*
 #include <stdio.h>

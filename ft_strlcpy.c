@@ -6,17 +6,17 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:59:11 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/18 11:05:58 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/20 16:35:22 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
 
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t i; 
-	
+	size_t	i;
+
 	i = 0;
 	if (size > 0)
 	{

@@ -6,88 +6,87 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 00:04:53 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/15 20:50:07 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/20 18:58:08 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
 
-static int ft_getsize(int *n)
+static int	ft_getsize(int *n)
 {
-    int tmp;
-    int size;
+	int	tmp;
+	int	size;
 
-    size = 2;
-    if (*n < 0)
-    {
-        size++;
-        *n = *n * -1;
-    }
-    tmp = *n;
-    while (tmp >= 10)
-    {
-        size++;
-        tmp = tmp / 10;
-    }
-    return (size);
+	size = 2;
+	if (*n < 0)
+	{
+		size++;
+		*n = *n * -1;
+	}
+	tmp = *n;
+	while (tmp >= 10)
+	{
+		size++;
+		tmp = tmp / 10;
+	}
+	return (size);
 }
 
-static char *ft_ifzero(char *str)
+static char	*ft_ifzero(char *str)
 {
-    int size;
+	int	size;
 
-    size = 2;
-    str = ft_calloc(1, size);
-    str[0] = '0';
-    str[1] = '\0';
-    return (str);
+	size = 2;
+	str = ft_calloc(1, size);
+	str[0] = '0';
+	str[1] = '\0';
+	return (str);
 }
 
-static char *ft_buildstr(int n, char *str, int size)
+static char	*ft_buildstr(int n, char *str, int size)
 {
-    str = ft_calloc(1, size);
-    size--;
-    str[size] = '\0';
-    while (n >= 0)
-    {
-        if (n == 0 && size == 0)
-            return(str);
-        else if (n == 0 && size == 1)
-        {
-            size--;
-            str[size] = '-';
-            return (str);
-        }
-        else
-        {
-            size--;
-            str[size] = (n % 10) + '0';
-            n /= 10;
-        }
-    }
-    return (str);
-
+	str = ft_calloc(1, size);
+	size--;
+	str[size] = '\0';
+	while (n >= 0)
+	{
+		if (n == 0 && size == 0)
+			return (str);
+		else if (n == 0 && size == 1)
+		{
+			size--;
+			str[size] = '-';
+			return (str);
+		}
+		else
+		{
+			size--;
+			str[size] = (n % 10) + '0';
+			n /= 10;
+		}
+	}
+	return (str);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-    char *str;
-    int size;
+	char	*str;
+	int		size;
 
-    str = NULL;
-    if (n == 0)
-    {
-        str = ft_ifzero(str);
-        if (str == NULL)
-            return (NULL);
-        return (str);
-    }
-    size = ft_getsize(&n);
-    str = ft_buildstr(n, str, size);
-    if (str == NULL)
-        return (NULL);
-    return (str);
+	str = NULL;
+	if (n == 0)
+	{
+		str = ft_ifzero(str);
+		if (str == NULL)
+			return (NULL);
+		return (str);
+	}
+	size = ft_getsize(&n);
+	str = ft_buildstr(n, str, size);
+	if (str == NULL)
+		return (NULL);
+	return (str);
 }
 /*
 #include <stdio.h>

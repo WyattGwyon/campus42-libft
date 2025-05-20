@@ -6,17 +6,17 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 19:23:22 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/14 23:46:34 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/20 18:50:52 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-static int ft_cntsplits(char const *s, char dlm)
+static int	ft_cntsplits(char const *s, char dlm)
 {
-	int i;
-	int cnt;
+	int	i;
+	int	cnt;
 
 	i = 0;
 	cnt = 0;
@@ -40,79 +40,79 @@ static int ft_cntsplits(char const *s, char dlm)
 	return (cnt + 1);
 }
 
-static char **ft_setarray(int strcnt, char const *s, char dlm)
+static char	**ft_setarray(int strcnt, char const *s, char dlm)
 {
-    char **array;
-    char set[2];
-    
-    set[0] = dlm;
-    set[1] = '\0';
+	char	**array;
+	char	set[2];
+
+	set[0] = dlm;
+	set[1] = '\0';
 	if (strcnt == 1)
 	{
-        array = (char **)ft_calloc(1, sizeof(char *));
+		array = (char **)ft_calloc(1, sizeof(char *));
 		array[0] = NULL;
 		return (array);
 	}
 	else if (strcnt == 2)
 	{
-        array = (char **)ft_calloc(2 , sizeof(char *));
+		array = (char **)ft_calloc(2, sizeof(char *));
 		array[0] = ft_strtrim(s, set);
 		array[1] = NULL;
 		return (array);
-	}	
+	}
 	array = (char **)ft_calloc(strcnt + 1, sizeof(char *));
 	return (array);
 }
 
-static char **ft_procbuff(char const *s, char c, char **array)
+static char	**ft_procbuff(char const *s, char c, char **array)
 {
-    char *buff;
-    int len;
-    int ai;
-    int bi;
-  
-    ai = 0;
-    bi = 0;
-    len = ft_strlen(s);
-    buff = (char *)ft_calloc(1, len);
-    while (s[0])
-    {
-        if (s[0] == c && *buff == 0)
-            s++;
-        else if (s[0] == c && *buff != 0)
-        {
-            buff[bi] = '\0';
-            array[ai] = ft_strdup(buff);
-            ft_memset(buff, 0, len);
-            s++;
-            bi = 0;
-            ai++;
-        }
-        else
-        {
-            buff[bi] = s[0];
-            bi++;
-            s++;
-        }
-    }
-    free(buff);
-    array[ai] = NULL;   
-    return (array);
+	char	*buff;
+	int		len;
+	int		ai;
+	int		bi;
+
+	ai = 0;
+	bi = 0;
+	len = ft_strlen(s);
+	buff = (char *)ft_calloc(1, len);
+	while (s[0])
+	{
+		if (s[0] == c && *buff == 0)
+			s++;
+		else if (s[0] == c && *buff != 0)
+		{
+			buff[bi] = '\0';
+			array[ai] = ft_strdup(buff);
+			ft_memset(buff, 0, len);
+			s++;
+			bi = 0;
+			ai++;
+		}
+		else
+		{
+			buff[bi] = s[0];
+			bi++;
+			s++;
+		}
+	}
+	free(buff);
+	array[ai] = NULL;
+	return (array);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-    char **array;
-	int strcnt;
+	char	**array;
+	int		strcnt;
 
-    strcnt = ft_cntsplits(s, c);
+	strcnt = ft_cntsplits(s, c);
 	array = ft_setarray(strcnt, s, c);
-    if (array == NULL)
-        return (NULL);
-    else if (strcnt == 1 || strcnt == 2)
-        return (array);
-    array = ft_procbuff(s, c, array);
-    return(array);
+	if (array == NULL)
+		return (NULL);
+	else if (strcnt == 1 || strcnt == 2)
+		return (array);
+	array = ft_procbuff(s, c, array);
+	return (array);
 }
 /*
 #include <stdio.h>

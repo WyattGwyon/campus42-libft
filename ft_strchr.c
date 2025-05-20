@@ -6,20 +6,20 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 13:45:12 by clouden           #+#    #+#             */
-/*   Updated: 2025/04/23 10:45:30 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/20 17:02:12 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-    while (*s != (char)c)
-    {
-        if (*s == '\0')
-            return ((char *)0);
-        else
-            s++;
-    }
-    return ((char *)s);
+	while (*s != (char)c)
+	{
+		if (*s == '\0')
+			return ((char *)0);
+		else
+			s++;
+	}
+	return ((char *)s);
 }
 /*
 #include <string.h>

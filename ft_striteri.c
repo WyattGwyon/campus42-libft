@@ -6,24 +6,24 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 00:07:13 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/14 23:48:31 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/20 19:05:42 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-    int i;
-    int len;
+	int	i;
+	int	len;
 
-    i = 0;
-    len = ft_strlen(s);
-    while (i < len)
-    {
-        f(i, &s[i]);
-        i++;
-    }
+	i = 0;
+	len = ft_strlen(s);
+	while (i < len)
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
 /*
 static void mapper(unsigned int i, char *c)

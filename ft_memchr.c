@@ -6,24 +6,24 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 12:49:17 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/18 10:54:11 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/20 17:25:04 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-    size_t i;
+	size_t	i;
 
-    i = 0;
-    while (i < n)
-    {
-        if (((unsigned char*)s)[i] == (unsigned char)c)
-            return ((void *)((unsigned char *)s + i));
-        i++;
-    }
-    return ((void *)0);
+	i = 0;
+	while (i < n)
+	{
+		if (((unsigned char *)s)[i] == (unsigned char)c)
+			return ((void *)((unsigned char *)s + i));
+		i++;
+	}
+	return ((void *)0);
 }
 /*
 #include <stdio.h>
@@ -46,4 +46,5 @@ int main(void)
 
     printf("char: %c, ft_returns: %p\n", c, ft_memchr(s1, c, n));
     printf("char: %c, norm_retns: %p\n", c, memchr(s1, c, n));
-}*/
+}
+*/

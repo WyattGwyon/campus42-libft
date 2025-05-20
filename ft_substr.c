@@ -6,28 +6,28 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 19:25:13 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/18 11:10:41 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/20 18:12:11 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <stdlib.h>
+#include "libft.h"
 
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    char *sub;
-    size_t i;
+	char	*sub;
+	size_t	i;
 
-    sub = malloc(len + 1);
-    if (sub == NULL)
-        return (NULL);
-    i = 0;
-    while (i < len)
-    {
-        sub[i] = s[start + i];
-        i++;
-    }
-    return (sub);
+	sub = ft_calloc(1, len + 1);
+	if (sub == NULL)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		sub[i] = s[start + i];
+		i++;
+	}
+	return (sub);
 }
 /*
 #include <stdio.h>
