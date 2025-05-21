@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@studen42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 11:26:16 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/20 18:35:24 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/21 13:48:46 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 int main(void)
 {
 	char *s1 = "xzxHelloxzxxz";
-	char *set = "zx";
+	char *set = "xz";
 	char *s2 = "xzxxzxxz";
 	char *s3 = "xzxxlzxxz";
 	

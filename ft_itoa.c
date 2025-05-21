@@ -6,29 +6,24 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 00:04:53 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/20 18:58:08 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/21 12:49:08 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
 
-static int	ft_getsize(int *n)
+static int	ft_getsize(long n, int neg)
 {
-	int	tmp;
 	int	size;
-
+	
 	size = 2;
-	if (*n < 0)
+	if (neg == 1)
+		size++;
+	while (n >= 10)
 	{
 		size++;
-		*n = *n * -1;
-	}
-	tmp = *n;
-	while (tmp >= 10)
-	{
-		size++;
-		tmp = tmp / 10;
+		n = n / 10;
 	}
 	return (size);
 }
@@ -44,7 +39,7 @@ static char	*ft_ifzero(char *str)
 	return (str);
 }
 
-static char	*ft_buildstr(int n, char *str, int size)
+static char	*ft_buildstr(long n, char *str, int size)
 {
 	str = ft_calloc(1, size);
 	size--;
@@ -73,17 +68,25 @@ char	*ft_itoa(int n)
 {
 	char	*str;
 	int		size;
+	long	num;
 
 	str = NULL;
-	if (n == 0)
+	num = n;
+	if (num == 0)
 	{
 		str = ft_ifzero(str);
 		if (str == NULL)
 			return (NULL);
 		return (str);
 	}
-	size = ft_getsize(&n);
-	str = ft_buildstr(n, str, size);
+	if (num < 0)
+	{
+		num = num * -1;
+		size = ft_getsize(num, 1);
+	}
+	else
+		size = ft_getsize(num, 0);
+	str = ft_buildstr(num, str, size);
 	if (str == NULL)
 		return (NULL);
 	return (str);
@@ -94,10 +97,9 @@ char	*ft_itoa(int n)
 int main(void)
 {
     int n0 = 0;
-    int n1 = -50;
-    int n2 = 50;
-    int n3 = 1101;
-    
+    int n1 = -2147483648;
+    int n2 = -50;
+    int n3 = -1101;
 
     printf("digit: %d\nstring: %s\n\n", n0, ft_itoa(n0));
     printf("digit: %d\nstring: %s\n\n", n1, ft_itoa(n1));

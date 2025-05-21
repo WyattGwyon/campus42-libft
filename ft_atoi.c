@@ -6,9 +6,11 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 18:51:01 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/20 17:58:42 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/21 13:19:16 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
@@ -19,7 +21,7 @@ int	ft_atoi(const char *str)
 	num = 0;
 	if (*str == '\0')
 		return (0);
-	while (*str == ' ')
+	while (*str == ' ' || ft_isalpha(*str) || !ft_isprint(*str))
 		str++;
 	if (*str == '-' || *str == '+')
 	{
@@ -27,7 +29,7 @@ int	ft_atoi(const char *str)
 			sign = -1;
 		str++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (ft_isdigit(*str))
 	{
 		num = num * 10 + (*str - '0');
 		str++;
@@ -41,10 +43,10 @@ int	ft_atoi(const char *str)
 int main(void)
 {
     char *s0 = "1234";
-    char *s1 = "   -1234";
-    char *s2 = "---1234";
-    char *s3 = "12c4";
-    char *s4 = "123-4";
+    char *s1 = "\n   -1234";
+    char *s2 = "c---1234";
+    char *s3 = "\n\n\n  -46\b9 \n5d6";
+    char *s4 = "\t\n\r\v\f  469 \n";
 
     printf("ft_atoi: %d\n", ft_atoi(s0));
     printf("atoi:    %d\n\n", atoi(s0));
