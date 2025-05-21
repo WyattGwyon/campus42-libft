@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 00:04:53 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/21 12:49:08 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/21 20:21:25 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static int	ft_getsize(long n, int neg)
 {
 	int	size;
-	
+
 	size = 2;
 	if (neg == 1)
 		size++;

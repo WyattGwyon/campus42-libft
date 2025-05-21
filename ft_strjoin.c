@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 19:48:17 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/20 18:18:42 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/21 20:17:04 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
-	new = (char *)ft_calloc(1, len1 + len2);
+	new = (char *)ft_calloc(1, len1 + len2 + 1);
 	if (new == NULL)
 		return (NULL);
 	while (i < len1)
@@ -36,7 +36,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		new[i] = s2[i - len1];
 		i++;
 	}
-	new[i] = '\0';
 	return (new);
 }
 /*
@@ -44,10 +43,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 int main(void)
 {
-    char *s1 = "hello";
-    char *s2 = "world";
+    char *s1 = "lorem ipsum";
+    char *s2 = "dolor site amet";
 
-    printf("new string %s", ft_strjoin(s1,s2));
+    printf("%s", ft_strjoin(s1,s2));
     return (0);
 }
 */
