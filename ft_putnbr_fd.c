@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 23:13:47 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/20 19:20:50 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/21 12:59:32 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_putnbr_fd(int n, int fd)
 
 int main(void)
 {
-    int n = 42;
+    int n = -2147483648;
 
     ft_putnbr_fd(n, 1);
 }

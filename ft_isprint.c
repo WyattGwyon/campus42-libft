@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 17:07:46 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/20 13:25:56 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/21 15:52:23 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(void)
 {
 	int c;
 	
-	c = 255;
+	c = 13;
 
 	printf("ft_isprint: %d\n", ft_isprint(c));
 	printf("isprint: %d\n", isprint(c));

@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 18:51:01 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/21 13:19:16 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/21 16:10:53 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_atoi(const char *str)
 	num = 0;
 	if (*str == '\0')
 		return (0);
-	while (*str == ' ' || ft_isalpha(*str) || !ft_isprint(*str))
+	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
 		str++;
 	if (*str == '-' || *str == '+')
 	{
@@ -42,9 +42,9 @@ int	ft_atoi(const char *str)
 
 int main(void)
 {
-    char *s0 = "1234";
-    char *s1 = "\n   -1234";
-    char *s2 = "c---1234";
+    char *s0 = "\t\n\r\v\fd469 \n";
+    char *s1 = "\n234";
+    char *s2 = "\e475";
     char *s3 = "\n\n\n  -46\b9 \n5d6";
     char *s4 = "\t\n\r\v\f  469 \n";
 

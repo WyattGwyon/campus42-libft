@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@studen42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 11:26:16 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/21 13:48:46 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/21 15:33:25 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		len--;
 	}
 	if (len - start <= 0)
-		return (0);
+		return (ft_strdup(""));
 	new = (char *)ft_calloc(len - start + 1, sizeof(char));
 	if (!new)
 		return (NULL);
