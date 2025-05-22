@@ -22,6 +22,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	len = ft_strlen(s);
 	new = ft_calloc(1, len + 1);
+	if (!new)
+		return (NULL);
 	while (i < len)
 	{
 		new[i] = f(i, s[i]);

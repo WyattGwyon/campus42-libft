@@ -34,6 +34,8 @@ static char	*ft_ifzero(char *str)
 
 	size = 2;
 	str = ft_calloc(1, size);
+	if (!str)
+		return (NULL);
 	str[0] = '0';
 	str[1] = '\0';
 	return (str);
@@ -42,6 +44,8 @@ static char	*ft_ifzero(char *str)
 static char	*ft_buildstr(long n, char *str, int size)
 {
 	str = ft_calloc(1, size);
+	if (!str)
+		return (NULL);
 	size--;
 	str[size] = '\0';
 	while (n >= 0)

@@ -6,13 +6,15 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 13:57:14 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/20 20:33:44 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/22 20:09:01 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stddef.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 int		ft_atoi(const char*str);
 void	ft_bzero(void *s, size_t n);
@@ -47,5 +49,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	*ft_memmove(void *dest, const void *src, size_t n);
 
 #endif

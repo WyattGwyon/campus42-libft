@@ -16,6 +16,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	const char	*last_letter;
 
+	c = (char)c;
 	last_letter = (char *)0;
 	if (c == 0)
 	{

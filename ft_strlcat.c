@@ -31,7 +31,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	else if (size > 1 && d_len == size - 1)
 		return (d_len + ft_strlen(src));
-	while (d_len + i < size - 1)
+	while (src[i] && d_len + i < size - 1)
 	{
 		dst[d_len + i] = src[i];
 		i++;
@@ -39,21 +39,22 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[d_len + i] = '\0';
 	return (d_len + ft_strlen(src));
 }
-/*
-#include <stdio.h>
+
+/* #include <stdio.h>
 #include <bsd/string.h>
 
 int main(void)
 {
-	char *dst = NULL;
-	char *src = "lorem ipsum dolor sit amet";
-	size_t size = 20;
+	//char *dst = NULL;
+	char dst[30]; memset(dst, 0, 30);
+	char *src = "AAAAAAAAA";
+	size_t size = -1;
 
-	memset(dst, 'r', 15);
-	size_t results = strlcat(dst, src, size);
+	//memset(dst, 'r', 15);
+	size_t results = ft_strlcat(dst, src, size);
 		
 	printf("destination: %s\n", dst);
 	printf("results: %zu\n", results);
 	return (0);
-}
-*/
+} */
+
