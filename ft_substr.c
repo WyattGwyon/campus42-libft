@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 19:25:13 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/22 19:19:43 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/23 19:26:04 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-
 	l = ft_strlen(s);
 	if (start >= l)
-		return(ft_calloc(1, sizeof(char)));
-
+		return (ft_calloc(1, sizeof(char)));
 	if (len > l - start)
 		len = l - start;
-
 	sub = ft_calloc(1, len + 1);
 	if (sub == NULL)
 		return (NULL);
-
 	i = 0;
 	while (s[start + i] && i < len)
 	{

@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 23:13:47 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/22 14:35:37 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/23 19:24:14 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (n < 0)
 	{
-		ft_putchar_fd('-',fd);
+		ft_putchar_fd('-', fd);
 		n = n * -1;
 	}
 	if (n >= 10)

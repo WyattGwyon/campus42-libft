@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 12:04:28 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/20 13:46:02 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/23 19:27:02 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	i = 0;
 	if ((n == 0) || (dest == src))
-		return (dest);	
+		return (dest);
 	while (i < n)
 	{
 		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];

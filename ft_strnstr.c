@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 18:38:00 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/22 19:58:38 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/23 19:14:39 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			ni = 0;
 			continue ;
 		}
-		else if (haystack[hi + ni] == needle[ni] && ni < nlen)
-		{
-			ni++;
-			if (ni == nlen)
-				return ((char *)haystack + hi);
-			continue ;
-		}
+		ni++;
+		if (ni == nlen)
+			return ((char *)haystack + hi);
 	}
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 17:01:11 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/21 19:19:12 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/23 19:17:59 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[d_len + i] = '\0';
 	return (d_len + ft_strlen(src));
 }
-
-/* #include <stdio.h>
+/* 
+#include <stdio.h>
 #include <bsd/string.h>
 
 int main(void)
@@ -56,5 +56,5 @@ int main(void)
 	printf("destination: %s\n", dst);
 	printf("results: %zu\n", results);
 	return (0);
-} */
-
+}
+*/

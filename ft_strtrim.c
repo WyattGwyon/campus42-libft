@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@studen42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 11:26:16 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/21 15:33:25 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/23 18:58:30 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	len = ft_strlen(s1);
 	while (ft_isnset(s1[start], set) && start < len)
-	{
 		start++;
-	}
 	while (ft_isnset(s1[len - 1], set) && start < len)
-	{
 		len--;
-	}
 	if (len - start <= 0)
 		return (ft_strdup(""));
 	new = (char *)ft_calloc(len - start + 1, sizeof(char));
@@ -58,6 +54,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	return (new);
 }
+
 /*
 #include <stdio.h>
 
