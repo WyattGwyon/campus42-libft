@@ -6,7 +6,7 @@
 /*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 19:48:17 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/21 20:17:04 by clouden          ###   ########.fr       */
+/*   Updated: 2025/05/26 12:39:31 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char			*new;
-	size_t			len1;
-	size_t			len2;
-	unsigned char	i;
+	char	*new;
+	size_t	len1;
+	size_t	len2;
+	size_t	i;
 
 	i = 0;
+	if (!s1 || !s2)
+		return (NULL);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
-	new = (char *)ft_calloc(1, len1 + len2 + 1);
+	new = (char *)ft_calloc(len1 + len2 + 1, sizeof(char));
 	if (new == NULL)
 		return (NULL);
 	while (i < len1)
