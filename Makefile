@@ -13,6 +13,7 @@
 # Compiler and flags
 CC      = cc
 CFLAGS  = -Wall -Wextra -Werror
+CFLAGS	+= -g3
 
 # Name of the output static library
 NAME    = libft.a
@@ -54,6 +55,11 @@ SRCS    =	ft_atoi.c\
 			ft_substr.c
 OBJS    = $(SRCS:.c=.o)
 
+#Test file
+TEST_SRC = .test.c
+TEST_OBJ = $(TEST_SRC:.c=.o)
+TEST_BIN = test_libft
+
 # Default rule
 all: $(NAME)
 
@@ -65,15 +71,19 @@ $(NAME): $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+# Rule to compile test
+test: $(TEST_OBJ) $(NAME)
+	$(CC) $(CFLAGS) $^ -o $(TEST_BIN) 
+
 # Clean object files
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(TEST_OBJ)
 
 # Clean object files and library
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(TEST_BIN)
 
 # Rebuild everything
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re test
