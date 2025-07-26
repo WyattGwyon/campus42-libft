@@ -55,6 +55,9 @@ SRCS    =	ft_atoi.c\
 			ft_substr.c
 OBJS    = $(SRCS:.c=.o)
 
+BONUS_SRCS	= ft_lstnew.c
+BONUS_OBJS	= $(BONUS_SRCS:.c=.o)
+
 #Test file
 TEST_SRC = .test.c
 TEST_OBJ = $(TEST_SRC:.c=.o)
@@ -71,13 +74,16 @@ $(NAME): $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+bonus: $(OBJS) $(BONUS_OBJS)
+	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+
 # Rule to compile test
 test: $(TEST_OBJ) $(NAME)
 	$(CC) $(CFLAGS) $^ -o $(TEST_BIN) 
 
 # Clean object files
 clean:
-	rm -f $(OBJS) $(TEST_OBJ)
+	rm -f $(OBJS) $(BONUS_OBJS) $(TEST_OBJ)
 
 # Clean object files and library
 fclean: clean
@@ -86,4 +92,4 @@ fclean: clean
 # Rebuild everything
 re: fclean all
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re test bonus
