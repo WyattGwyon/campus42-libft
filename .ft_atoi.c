@@ -3,36 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clouden <clouden@student.42madrid.com>     +#+  +:+       +#+        */
+/*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 18:51:01 by clouden           #+#    #+#             */
-/*   Updated: 2025/05/21 16:10:53 by clouden          ###   ########.fr       */
+/*   Created: 2025/07/15 15:56:51 by clouden           #+#    #+#             */
+/*   Updated: 2025/07/15 15:56:55 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+static int  ft_isspace(int c)
 {
-	int	sign;
-	int	num;
+    if (c == ' ' || (c >= '\t' && c <= '\r'))
+        return (1);
+    return (0);
+}
 
-	sign = 1;
-	num = 0;
-	if (*str == '\0')
-		return (0);
-	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
+int ft_atoi(const char *str)
+{
+    int sign;
+    int number;
+
+    sign = 1;
+    number = 0;
+    if (!str)
+        return (0);
+    while (ft_isspace(str[0]) || str[0] == '+')
+        str++;
+    if (str[0] == '-')
+    {    
+        sign = -1;
+        str++;
+    }
+    while (ft_isdigit(str[0]))
+    {
+        number *= 10;
+        number += str[0] - '0';
 		str++;
-	if (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			sign = -1;
-		str++;
-	}
-	while (ft_isdigit(*str))
-	{
-		num = num * 10 + (*str - '0');
-		str++;
-	}
-	return (num * sign);
+    }
+    return (sign * number);
 }
