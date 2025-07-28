@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clouden <clouden@student.42madrid.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/28 14:44:01 by clouden           #+#    #+#             */
-/*   Updated: 2025/07/28 14:44:03 by clouden          ###   ########.fr       */
+/*   Created: 2025/07/28 19:03:59 by clouden           #+#    #+#             */
+/*   Updated: 2025/07/28 19:04:01 by clouden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int		len;
+	t_list	*new_list;
+	t_list	*new_node;
 
-	len = 0;
+	new_list = NULL;
+	if (!lst || !f || !del)
+		return (NULL);
 	while (lst)
 	{
-		len++;
+		new_node = ft_lstnew(f(lst->content));
+		if (!new_node)
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, new_node);
 		lst = lst->next;
 	}
-	return (len);
+	return (new_list);
 }
