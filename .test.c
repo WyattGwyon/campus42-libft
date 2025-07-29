@@ -40,5 +40,10 @@ int main(void)
     printf("digit: %d\nstring: %s\n\n", n3, ft_itoa(n3));
 	printf("=========== {ft_itoa} TEST FINISH =========\n");
 
+	printf("=========== PREPARE BONUS =================\n");
+	printf("=========== {ft_lstnew.c} TEST FINISH =========\n");
+
+	
+
     return (0);
 }

@@ -86,7 +86,7 @@ bonus: $(OBJS) $(BONUS_OBJS)
 	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 # Rule to compile test
-test: $(TEST_OBJ) $(NAME)
+test: $(TEST_OBJ) $(NAME) bonus
 	$(CC) $(CFLAGS) $^ -o $(TEST_BIN) 
 
 # Clean object files
